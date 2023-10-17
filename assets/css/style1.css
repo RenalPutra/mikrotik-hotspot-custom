@@ -1,0 +1,971 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 33%, 9%);
+  --neon-text-color: #f40;
+  --neon-border-color: #08f;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.card-img-top {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  
+  bottom: 55px;
+  left: 30px;
+  border-radius: 10px;
+}
+
+.visimisi {
+  text-align: justify;
+}
+
+#organisasi {
+  width: 100vw;
+}
+#organisasi .bgcard {
+  position: absolute;
+  width: 100vw;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  top: -270px;
+  filter: brightness(40%);
+}
+
+#organisasi p {
+  font-size: 17px;
+
+}
+
+.big-card{
+  height: 70vh
+}
+
+.cardme{
+  height: 50vh;
+}
+
+.cardme:hover{
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+  box-shadow:
+  inset 0 0 60px whitesmoke,
+  inset 20px 0 80px rgb(0, 0, 255),
+  inset -20px 0 80px #0ff,
+  inset 20px 0 300px rgb(0, 0, 255),
+  inset -20px 0 300px #0ff,
+  0 0 50px #fff,
+  -10px 0 80px rgb(0, 0, 255),
+  10px 0 80px #0ff;
+  transform: scale(1.1);
+  
+  
+}
+.cardme::-moz-selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+.cardme::selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+.cardme:focus {
+  outline: none;
+}
+
+.linimasa1 {
+  height: 55vh;
+  width: 100vw;
+}
+
+.linimasa2 {
+  display: none !important;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.scroller:hover {
+  animation-play-state: paused;
+}
+
+.scroller__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.scroller__inner img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* general styles */
+
+
+
+.tombol {
+  font-style: italic;
+  color: #fff;
+  border: 0.4rem solid #fff;
+  text-transform: uppercase;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.tombol::-moz-selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+.tombol::selection {
+  background-color: var(--neon-border-color);
+  color: var(--neon-text-color);
+}
+
+.tombol:focus {
+  outline: none;
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
+      0 0 2rem var(--neon-text-color), 0 0 4rem var(--neon-text-color),
+      0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
+      0 0 10rem var(--neon-text-color);
+
+    box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+      0 0 2rem var(--neon-border-color), inset 0 0 2rem var(--neon-border-color),
+      0 0 4rem var(--neon-border-color), inset 0 0 4rem var(--neon-border-color);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  background: var(--clr-primary-400);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
+}
+
+/* for testing purposed to ensure the animation lined up correctly */
+.test {
+  background: red !important;
+}
+
+nav {
+  transition: all 0.5s ease;
+  width: 100vw;
+}
+
+#linkedin {
+  background-color: #04364a;
+  height: 18vh;
+  display: flex;
+}
+
+#linkedin .linkme {
+  display: flex;
+}
+
+.sticky {
+  background-color: #176b87;
+}
+
+.background-radial-gradient {
+  background-color: #053b50;
+  background-image: radial-gradient(
+      650px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(0, 0%, 0%) 80%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  height: 100vh;
+}
+
+#mybars {
+  display: none;
+}
+
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#box1 {
+  width: 14vw;
+  height: 14vw;
+  right: -55px;
+  top: -80px;
+}
+
+#more {
+  display: none;
+}
+
+#wave1 {
+  --s: 35px; /* the size of the wave */
+  --b: 15px; /* the thickness of the line*/
+  bottom: 130px;
+  left: -40px;
+  height: calc(2 * var(--s));
+  aspect-ratio: 2.5;
+  display: grid;
+  padding: 0px;
+  filter: contrast(20) hue-rotate(20deg);
+}
+#wave1::before {
+  content: "";
+  --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+    #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+  --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+  background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+      calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+    radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+      calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+  animation: m 1s infinite linear;
+}
+#wave2 {
+  --s: 35px; /* the size of the wave */
+  --b: 15px; /* the thickness of the line*/
+  bottom: 80px;
+  left: -40px;
+  height: calc(2 * var(--s));
+  aspect-ratio: 2.5;
+  display: grid;
+  padding: 0px;
+  filter: contrast(20) hue-rotate(20deg);
+}
+#wave2::before {
+  content: "";
+  --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+    #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+  --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+  background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+      calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+    radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+      calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+  animation: m 1s infinite linear;
+}
+#wave3 {
+  --s: 35px; /* the size of the wave */
+  --b: 15px; /* the thickness of the line*/
+  bottom: 180px;
+  left: -40px;
+  height: calc(2 * var(--s));
+  aspect-ratio: 2.5;
+  display: grid;
+  padding: 0px;
+  filter: contrast(20) hue-rotate(20deg);
+}
+#wave3::before {
+  content: "";
+  --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+    #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+  --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+  background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+      calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+    radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+      calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+  animation: m 1s infinite linear;
+}
+@keyframes m {
+  to {
+    background-position: calc(50% - 5 * var(--s)) calc(50% - var(--s)),
+      calc(50% - 3 * var(--s)) calc(50% + var(--s));
+  }
+}
+#wave-static {
+  width: 20vw;
+  left: 350px;
+  bottom: -35px;
+}
+#cr-image {
+  width: 30vw;
+  height: 45vw;
+}
+
+#cr-image-oragnisasi {
+  width: 50vw;
+  height: 40vw;
+}
+
+#image-static-team {
+  width: 70vw;
+  height: 18vw;
+}
+#icon-social {
+  width: 2vw;
+}
+
+#visi-misi-desc p {
+  font-size: 1.5vw;
+}
+
+.justify-text {
+  text-align: justify;
+}
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.4) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}
+
+form .fields .input-field {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+.input-field input,
+select {
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 3px solid #ffffff;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+  opacity: 0.5;
+}
+
+.input-field input :focus,
+.input-field select:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+.input-field select,
+.input-field input[type="date"] {
+  color: #707070;
+}
+.input-field input[type="date"]:valid {
+  color: #333;
+}
+
+.form-control {
+  background-color: yellow;
+}
+.button {
+  color: white;
+  background-color: #107aa7;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 430px) {
+  .scroller__inner img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .linimasa1 {
+    display: none !important;
+  }
+
+  .linimasa2 {
+    display: block !important;
+    height: 80vh;
+  }
+
+  #organisasi .bgcard {
+    display: none;
+  }
+
+  .big-card{
+    height: auto;
+  }
+
+  .cardme{
+    height: 50vh;
+  }
+
+  .cardme:hover{
+    transform: scale(1);
+  }
+
+  .judul-org{
+    padding-top: 40px;
+    padding-bottom: 40px;;
+  }
+
+  #linkedin {
+    background-color: #04364a;
+    display: block;
+    height: 30vh;
+    align-items: center;
+  }
+
+  #linkedin .linkme {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  #linkedin img {
+    width: 40vw;
+  }
+
+  #linkedin .follow {
+    margin-top: 30px;
+  }
+
+  .background-radial-gradient {
+    height: auto;
+  }
+
+  .visimisi {
+    text-align: left;
+  }
+
+  nav {
+    transition: all 0.5s ease;
+    background-color: #176b87;
+    width: 100vw;
+  }
+
+  .appearme {
+    display: flex !important;
+    background-color: #176b87;
+    animation: fadeInOut 0.5s linear forwards;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .navigasime {
+    justify-content: start;
+    margin-top: 30px;
+  }
+
+  #mybars {
+    display: block;
+    width: 2rem;
+    margin-right: 10px;
+  }
+
+  #my-gap {
+    gap: 1rem;
+  }
+
+  #navme {
+    width: 104vw;
+  }
+
+  #box1 {
+    display: none;
+  }
+
+  #cr-image {
+    width: 60vw;
+    height: 85vw;
+  }
+
+  #cr-image-oragnisasi {
+    width: 90vw;
+    height: 80vw;
+  }
+
+  #short-tim p {
+    font-size: 4vw;
+  }
+  #wave1 {
+    display: none;
+  }
+  #wave2 {
+    display: none;
+  }
+  #wave3 {
+    display: none;
+  }
+
+  #wave-static {
+    display: none;
+  }
+  #radius-shape-1 {
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+  }
+
+  #radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+  }
+
+  #short-desc-profile-phone p {
+    font-size: 4vw;
+  }
+
+  #box-visi-misi {
+    margin: 0;
+    padding: 0;
+    width: 120%;
+  }
+
+  #visi-misi-desc p {
+    font-size: 3.5vw;
+  }
+
+  #icon-social {
+    width: 6vw;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  #box1 {
+    display: block;
+  }
+
+  nav {
+    transition: all 0.5s ease;
+    width: 100vw;
+  }
+
+  #icon-social {
+    width: 2vw;
+  }
+
+  #cr-image-oragnisasi {
+    width: 50vw;
+    height: 40vw;
+  }
+  #cr-image {
+    width: 30vw;
+    height: 45vw;
+  }
+
+  #short-desc-profile-phone p {
+    font-size: 1.5rem;
+  }
+
+  #visi-misi-desc p {
+    font-size: 1.5vw;
+  }
+
+  #short-tim p {
+    font-size: 1.5rem;
+  }
+  #wave1 {
+    --s: 35px; /* the size of the wave */
+    --b: 15px; /* the thickness of the line*/
+    bottom: 130px;
+    left: -40px;
+    height: calc(2 * var(--s));
+    aspect-ratio: 2.5;
+    display: grid;
+    padding: 0px;
+    filter: contrast(20) hue-rotate(20deg);
+  }
+  #wave1::before {
+    content: "";
+    --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+      #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+    --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+    background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+        calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+        calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+    animation: m 1s infinite linear;
+  }
+  #wave2 {
+    --s: 35px; /* the size of the wave */
+    --b: 15px; /* the thickness of the line*/
+    bottom: 80px;
+    left: -40px;
+    height: calc(2 * var(--s));
+    aspect-ratio: 2.5;
+    display: grid;
+    padding: 0px;
+    filter: contrast(20) hue-rotate(20deg);
+  }
+  #wave2::before {
+    content: "";
+    --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+      #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+    --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+    background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+        calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+        calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+    animation: m 1s infinite linear;
+  }
+  #wave3 {
+    --s: 35px; /* the size of the wave */
+    --b: 15px; /* the thickness of the line*/
+    bottom: 180px;
+    left: -40px;
+    height: calc(2 * var(--s));
+    aspect-ratio: 2.5;
+    display: grid;
+    padding: 0px;
+    filter: contrast(20) hue-rotate(20deg);
+  }
+  #wave3::before {
+    content: "";
+    --_g: calc(-0.6 * var(--s)), #0000 calc(99% - var(--b)),
+      #ffffff calc(101% - var(--b)) 99%, #0000 101%;
+    --_r: calc(1.166 * var(--s) + var(--b) / 2) at left 50%;
+    background: radial-gradient(var(--_r) bottom var(--_g)) calc(50% - var(--s))
+        calc(50% - var(--s)) / calc(4 * var(--s)) calc(2 * var(--s)),
+      radial-gradient(var(--_r) top var(--_g)) calc(50% + var(--s))
+        calc(50% + var(--s)) / calc(4 * var(--s)) calc(2 * var(--s));
+    animation: m 1s infinite linear;
+  }
+
+  #wave-static {
+    display: block;
+  }
+}
+
+/* Kode CSS yang sama seperti yang Anda berikan sebelumnya */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Kode CSS untuk iPad di sini */
+  .background-radial-gradient {
+    height: auto;
+  }
+
+  #organisasi .bgcard {
+    display: none;
+  }
+
+  .big-card{
+    height: auto;
+  }
+
+  .cardme{
+    height: 40vh;
+  }
+
+  .cardme:hover{
+    transform: scale(1);
+  }
+
+  .judul-org{
+    padding-top: 40px;
+    padding-bottom: 40px;;
+  }
+
+  #linkedin {
+    background-color: #04364a;
+    display: block;
+    height: 25vh;
+    align-items: center;
+  }
+
+  #linkedin .linkme {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  #linkedin img {
+    width: 40vw;
+  }
+
+  #linkedin .follow {
+    margin-top: 30px;
+  }
+
+  .linimasa1 {
+    display: none !important;
+  }
+
+  .linimasa2 h1 {
+    font-size: 3rem;
+  }
+  .linimasa2 p {
+    font-size: 1.9rem;
+  }
+
+  .linimasa2 {
+    display: block !important;
+    height: 80vh;
+  }
+
+  .appearme {
+    display: flex !important;
+    background-color: #176b87;
+    animation: fadeInOut 0.5s linear forwards;
+  }
+
+  nav {
+    background-color: #176b87;
+    width: 100vw;
+  }
+
+  .navigasime {
+    justify-content: start;
+    margin-top: 30px;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #mybars {
+    display: block;
+    width: 2rem;
+    margin-right: 40px;
+  }
+
+  #my-gap {
+    gap: 1rem;
+  }
+
+  #navme {
+    width: 104vw;
+  }
+
+  #box1 {
+    display: none;
+  }
+
+  #cr-image {
+    width: 60vw;
+    height: 85vw;
+  }
+
+  #cr-image-oragnisasi {
+    width: 90vw;
+    height: 80vw;
+  }
+
+  #short-tim p {
+    font-size: 4vw;
+  }
+  #wave1,
+  #wave2,
+  #wave3 {
+    display: none;
+  }
+
+  #wave-static {
+    display: none;
+  }
+  #radius-shape-1,
+  #radius-shape-2 {
+    height: 0px;
+    width: 0px;
+    top: 0px;
+    left: 0px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+  }
+
+  #short-desc-profile-phone p {
+    font-size: 4vw;
+  }
+
+  #box-visi-misi {
+    margin: 0;
+    padding: 0;
+    width: 120%;
+  }
+
+  #visi-misi-desc p {
+    font-size: 3.5vw;
+  }
+
+  #icon-social {
+    width: 6vw;
+  }
+}
+
+/* Kode CSS untuk perangkat berukuran besar (Desktop) */
+@media screen and (min-width: 1025px) {
+  /* Kode CSS untuk desktop di sini */
+  .background-radial-gradient {
+    height: 100vh;
+  }
+
+
+
+  .appearme {
+    display: flex;
+    background-color: #176b87;
+  }
+  .cardme{
+    height: 60vh;
+  }
+
+  nav {
+    transition: all 0.5s ease;
+    width: 100vw;
+  }
+
+  .navigasime {
+    justify-content: end;
+    margin-top: 0;
+  }
+
+  #mybars {
+    display: none;
+  }
+
+  #my-gap {
+    gap: 5rem;
+  }
+
+  #navme {
+    width: 100vw;
+  }
+}
+
+/*untuk layar device berukuran besar*/
+/* @media screen and (min-width: 800px) {
+  #navme {
+    width: 100vw;
+  }
+  #my-gap {
+    gap: 5rem;
+  }
+
+  .navigasime {
+    justify-content: end;
+    margin-top: 0;
+  }
+
+  #mybars {
+    display: none;
+    width: 2rem;
+  }
+} */

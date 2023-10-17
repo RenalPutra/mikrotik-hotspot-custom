@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>mikrotik hotspot > error</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <style type="text/css">
+      .logo-container {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .logo img {
+        height: 10%;
+        width: 10%;
+      }
+      @keyframes scaleAndRotateAnimation {
+        0% {
+          transform: scale(1) rotate(0deg); /* Awal animasi: skala normal dan rotasi 0 derajat */
+        }
+        50% {
+          transform: scale(1.2) rotate(180deg); /* Tengah animasi: skala maksimum dan rotasi 180 derajat */
+        }
+        100% {
+          transform: scale(1) rotate(360deg); /* Akhir animasi: kembali ke skala normal dan rotasi 360 derajat */
+        }
+      }
+
+      /* Tambahkan animasi ke elemen dengan kelas ini */
+      .scale-and-rotate {
+        animation: scaleAndRotateAnimation 4s linear infinite; /* Waktu animasi 4 detik, putar tanpa henti dengan percepatan linear */
+      }
+
+      .background-radial-gradient {
+        background-color: #053b50;
+      }
+
+      textarea,
+      input,
+      select {
+        background-color: #fdfbfb;
+        border: 1px #bbbbbb solid;
+        padding: 2px;
+        margin: 1px;
+        font-size: 14px;
+        color: #808080;
+      }
+      a,
+      a:link,
+      a:visited,
+      a:active {
+        color: #aaaaaa;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      a:hover {
+        border-bottom: 1px dotted #c1c1c1;
+        color: #aaaaaa;
+      }
+      img {
+        border: none;
+      }
+      td {
+        font-size: 12px;
+        color: #7a7a7a;
+      }
+      .btn-eror {
+        background-color: #c1c1c1;
+        margin: 20px;
+        padding: 10px 20px;
+        border-radius: 40px;
+        color: #052c45;
+        color: red;
+      }
+    </style>
+  </head>
+  <body class="background d-sm-flex align-items-sm-center">
+    <div class="container px-4 text-center">
+      <div class="row gx-5">
+        <div class="col-lg-6">
+          <div class="">
+            <div class="main">
+              <!-- <img
+			  src="img/server.png"
+			  alt=""
+			  class="position-absolute z-1 scale"
+			  style="right: 25%; width: 50%"
+			/> -->
+              <div class="wrap-2 text-light rounded-5 position-relative z-2">
+                <img class="plug" src="img/socket.gif" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 row align-items-lg-center">
+          <div class="p-3">
+            <div class="">
+              <!-- <img
+                src="img/server.png"
+                alt=""
+                class="position-absolute z-1 scale"
+                style="right: 25%; width: 50%"
+              /> -->
+              <div class="wrap-2 text-light rounded-5 position-relative z-2">
+                <table>
+                  <tr>
+                    <h1 class="fw-bold eror">404</h1>
+                    <h1 class="fw-bold eror-2">
+                      Hotspot Mikrotik ERROR: $(error)
+                    </h1>
+                    We're sorry, the page you requestd could not be found please
+                    go the login<br />
+                    <td align="center" valign="middle">
+                      <br />
+                      <a class="btn-eror text-dark" href="$(link-login)"
+                        >LOGIN</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

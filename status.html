@@ -1,0 +1,164 @@
+<html>
+<head>
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<title>Internet hotspot - Status</title>
+<link rel="stylesheet" href="assets/css/style.css" >
+<link rel="stylesheet" href="assets/css/bootstrap.css" />
+<script>
+
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          var eqPos = cookie.indexOf("=");
+          var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+	window.close();
+	return false;
+    }
+    function deleteCookies() {
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          var eqPos = cookie.indexOf("=");
+          var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+      }
+</script>
+
+  
+    
+</head>
+<body class="background d-lg-flex align-items-center justify-content-center" $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
+    <!--Laptop-->
+  <div class="d-flex align-items-center justify-content-center kotak" id="laptop">
+
+    <div class="ie-fixMinHeight col-lg-6 col-12 col-sm-12 pb-lg-0">
+        <div class="main">
+            <div
+            class="wrap-5 shadow-lg text-light rounded-5"
+            style="background-color: #7c81ad;"
+          >
+                $(if login-by == 'trial')
+                    <h1 class="text-center">Hi, trial user!</h1>
+                $(elif login-by != 'mac')
+                    <h1 class="text-center">Hi, $(username)!</h1>
+                $(endif)                
+
+                <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                    <table>
+                        <tr><td>IP address</td><td>$(ip)</td></tr>
+                        <tr><td>Bytes up / down</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                    $(if session-time-left)
+                        <tr><td>Connected / left</td><td>$(uptime) / $(session-time-left)</td></tr>
+                    $(else)
+                        <tr><td>Connected</td><td>$(uptime)</td></tr>
+                    $(endif)
+                    $(if blocked == 'yes')
+                        <tr><td>Status</td><td>
+                    <a href="$(link-advert)" target="hotspot_advert">Advertisement required</a></td>
+                        </tr>
+                    $(elif refresh-timeout)
+                        <tr><td>Status refresh</td><td>$(refresh-timeout)</td></tr>
+                    $(endif)
+                        </table>
+                    $(if login-by-mac != 'yes')
+                    <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+                    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+                    <!-- end of user manager link -->
+                    <input type="submit" value="Log out">
+                    $(endif)
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="position-relative row col-lg-5 col-12 col-sm-12 text-center text-light py-sm-5 ">
+        <img
+          src="img/status.png"
+          alt=""
+          class="position-absolute  z-1 scale"
+          
+        />
+        <div class="z-2 position-relative">
+
+            <h1 class="fw-bold eror">Status Connected</h1>
+            <div class="p-div mx-5">
+              <p class="gede-p">
+                  You already have access internet, be wise when surfing the internet. enjoy
+              </p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--Handphone and Ipad-->
+  <div class=" align-items-center gx-5" id="smarthphone">
+    <div class="col-lg-6 col-12 col-sm-12 text-center text-light py-sm-5">
+        <h1 class="fw-bold eror">Status Connected</h1>
+        <div class="p-div mx-5">
+            <p class="gede-p">
+                You already have access internet, be wise when surfing the internet. enjoy
+            </p>
+          </div>
+    </div>
+    <div class="ie-fixMinHeight col-lg-6 col-12 col-sm-12 pb-5">
+        <div class="main">
+            <div
+            class="wrap-5 shadow-lg text-light rounded-5"
+            style="background-color: #7c81ad;"
+          >
+                $(if login-by == 'trial')
+                    <h1 class="text-center">Hi, trial user!</h1>
+                $(elif login-by != 'mac')
+                    <h1 class="text-center">Hi, $(username)!</h1>
+                $(endif)                
+
+                <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                    <table>
+                        <tr><td>IP address</td><td>$(ip)</td></tr>
+                        <tr><td>Bytes up / down</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                    $(if session-time-left)
+                        <tr><td>Connected / left</td><td>$(uptime) / $(session-time-left)</td></tr>
+                    $(else)
+                        <tr><td>Connected</td><td>$(uptime)</td></tr>
+                    $(endif)
+                    $(if blocked == 'yes')
+                        <tr><td>Status</td><td>
+                    <a href="$(link-advert)" target="hotspot_advert">Advertisement required</a></td>
+                        </tr>
+                    $(elif refresh-timeout)
+                        <tr><td>Status refresh</td><td>$(refresh-timeout)</td></tr>
+                    $(endif)
+                        </table>
+                    $(if login-by-mac != 'yes')
+                    <!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+                    <button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+                    <!-- end of user manager link -->
+                    <input type="submit" value="Log out">
+                    $(endif)
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

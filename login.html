@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HOTSPOT PT BBE</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/style1.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar d-flex row position-fixed z-3 navbar-expand-lg"
+        id="navme"
+      >
+        <div class="container align-baseline">
+          <div class="position-relative mx-5" id="logome">
+            <a class="navbar-brand text-white fw-bold" href="#home">PT BBE</a>
+          </div>
+
+          <div id="icons">
+            <img src="img/bars-solid.svg" id="mybars" alt="" />
+          </div>
+
+          <div
+            class="collapse navbar-collapse navigasime"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mx-5" id="my-gap">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="#home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#short-profile">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#visi&misi">Visi & Misi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#organisasi">Keunggulan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#team">My Team</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div hidden>
+      $(if chap-id)
+      <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+      </form>
+
+      <script type="text/javascript" src="/md5.js"></script>
+      <script type="text/javascript">
+        <!--
+        function doLogin() {
+          document.sendin.username.value = document.login.username.value;
+          document.sendin.password.value = hexMD5(
+            "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
+          );
+          document.sendin.submit();
+          return false;
+        }
+        //-->
+      </script>
+      $(endif)
+    </div>
+    <div>
+      <section
+        class="background-radial-gradient overflow-hidden"
+        id="home"
+        style="width: 100vw"
+      >
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+          <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1
+                class="my-5 display-6 fw-bold ls-tight"
+                style="color: hsl(218, 81%, 95%)"
+              >
+                PT BUKIT BAIDURI ENERGI <br />
+                <span style="color: hsl(218, 81%, 75%)"
+                  >MINING CORPORATION</span
+                >
+              </h1>
+              <p
+                class="mb-4 opacity-70 justify-text"
+                style="color: hsl(218, 81%, 85%)"
+              >
+                Perusahaan tambang batubara PT. Bukit Baiduri Energi (BBE)
+                adalah sebuah perusahaan tambang peninggalan bangsa Belanda
+                Timur yang berdiri pada tahun 1849 bernama Oost Borneo
+                Maathcapij.
+              </p>
+            </div>
+
+            <div class="col-lg-5 mb-5 mb-lg-0 position-relative">
+              <div
+                id="radius-shape-1"
+                class="position-absolute rounded-circle shadow-5-strong"
+              ></div>
+              <div
+                id="radius-shape-2"
+                class="position-absolute shadow-5-strong"
+              ></div>
+
+              <div class="card bg-glass">
+                <div class="card-body py-5 px-md-5">
+                  <h1 class="pb-4 display-6 fw-bold ls-tight text-light">
+                    Login Here
+                  </h1>
+
+                  <form
+                    name="login"
+                    action="http://renal.net/login"
+                    method="post"
+                    onSubmit="return doLogin()"
+                  >
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                    <!-- Email input -->
+                    <div class="fields">
+                      <div class="form-outline input-field mb-4">
+                        <label class="label" for="form3Example3"
+                          >Username</label
+                        >
+                        <input
+                          name="username"
+                          type="text"
+                          value="$(username)"
+                          placeholder="Enter your Username"
+                          id="form3Example3"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <!-- Password input -->
+                      <div class="form-outline input-field mb-4">
+                        <label class="label" for="form3Example4"
+                          >Password</label
+                        >
+                        <input
+                          name="password"
+                          type="password"
+                          placeholder="Enter your Password "
+                          id="form3Example4"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Checkbox -->
+
+                    <!-- Submit button -->
+                    <div
+                      class="justify-content-center text-center align-items-center"
+                    >
+                      <button
+                        type="submit"
+                        class="button tombol mb-4 px-xl-5 py-xl-2 px-5 py-2"
+                      >
+                        Masuk
+                      </button>
+                    </div>
+                    <br />
+                    <div style="color: #c1c1c1; font-size: 9px">
+                      Powered by MikroTik RouterOS
+                    </div>
+                    <div $(if error)></div>
+                    <br />
+                    <div style="color: #ff8080; font-size: 9px">$(error)</div>
+                    <div $(endif)></div>
+
+                    <!-- Register buttons -->
+                  </form>
+                  <br />$(if trial == 'yes')Guest Login,
+                  <a
+                    style="color: #ff8080"
+                    href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
+                    >Click Here.</a
+                  >.$(endif)
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="overflow-hidden" id="short-profile">
+        <div class="container d-flex justify-content-center align-items-center">
+          <div
+            class="p-5 fs-5 text-primary-emphasis justify-text"
+            id="short-desc-profile-phone"
+          >
+            <p class="pb-3">
+              Perusahaan tambang batubara PT. Bukit Baiduri Energi (BBE) adalah
+              sebuah perusahaan tambang peninggalan bangsa Belanda Timur yang
+              berdiri pada tahun 1849 bernama Oost Borneo Maathcapij.
+            </p>
+
+            <p>
+              Pada tahun 1974 perusahaan ini berubah menjadi CV. Baiduri
+              Enterprise dengan izin penambangan SK No.
+              107/Sk-DJ/DPP/101/Pertamb./1974 pada tanggal 7 mei dengan nomor
+              Daftar Usaha 119 Kaltim yang dikeluarkan oleh Departemen
+              Pertambangan. Kemudian pada tanggal 4 Desember 1977, bentuk
+              perusahaan berubah menjadi Perseroan Terbatas (PT) dengan nama PT
+              Bukit Baiduri Enterprise.
+
+              <span id="dots">...</span>
+            </p>
+            <div id="more">
+              <p class="pb-3">
+                Tahun 1980 perusahaan ini resmi memiliki KP Eksplorasi DU 1518
+                dan DU 1519. Akhirnya pada awal tahun 1992, sebagian besar saham
+                dari PT Bukit Baiduri Enterprise dibeli oleh PT. Gajah Tunggal
+                Mulia Group, suatu kelompok usaha swasta nasional.
+              </p>
+            </div>
+            <a
+              onclick="myFunction()"
+              class="text-decoration-none fs-6"
+              style="color: #2ab4c1"
+              id="myBtn"
+              href="#short-profile"
+            >
+              Read more
+            </a>
+          </div>
+        </div>
+      </section>
+      <section
+        style="background-color: #f4fbfb"
+        class="d-flex align-items-center justify-content-center position-relative z-2"
+        id="visi&misi"
+      >
+        <div
+          class="container m-5 p-5 rounded-5 position-relative"
+          id="box-visi-misi"
+          style="background-color: #053b50"
+        >
+          <div
+            id="box1"
+            style="background-color: #176b87"
+            class="position-absolute z-1 rounded-circle"
+          ></div>
+          <div class="row d-flex align-items-center">
+            <div class="col position-relative">
+              <div
+                id="carouselExampleFade"
+                class="carousel slide carousel-fade"
+              >
+                <div class="carousel-inner">
+                  <div
+                    class="carousel-item active d-flex justify-content-center position-relative z-1"
+                  >
+                    <img
+                      src="img/cr_prof_1.jpg"
+                      class="rounded-5"
+                      alt="..."
+                      id="cr-image"
+                    />
+                  </div>
+                  <div
+                    class="carousel-item d-flex justify-content-center position-relative z-1"
+                  >
+                    <img
+                      src="img/cr_prof_2.jpg"
+                      class="rounded-5"
+                      alt="..."
+                      id="cr-image"
+                    />
+                  </div>
+                  <div
+                    class="carousel-item d-flex justify-content-center position-relative z-1"
+                  >
+                    <img
+                      src="img/cr_prof_3.jpg"
+                      class="rounded-5"
+                      alt="..."
+                      id="cr-image"
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleFade"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleFade"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div id="wave1" class="position-absolute z-0"></div>
+              <div id="wave2" class="position-absolute z-0"></div>
+              <div id="wave3" class="position-absolute z-0"></div>
+            </div>
+
+            <div class="col text-white d-grid gap-4" id="visi-misi-desc">
+              <div class="d-grid gap-3 pt-5">
+                <h1 class="display-3 fw-bold">VISI</h1>
+                <p class="visimisi">
+                  Menjadi perusahaan pertambangan batubara yang unggul dengan
+                  memperhatikan kepentingan stakeholder.
+                </p>
+              </div>
+              <div class="d-grid gap-3">
+                <h1 class="display-3 fw-bold">MISI</h1>
+                <p class="visimisi">
+                  Membangun dan mengimplementasikan Sistem Manajemen Keselamatan
+                  Pertambangan mendorong budaya K3 dan memastikan operasional
+                  tambang yang aman, efisien dan produktif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="organisasi"
+        style="background-color: #176b87"
+        class="position-relative"
+      >
+        <h1
+          class="judul-org position-relative z-2 mt-5 fw-bold text-white text-center"
+        >
+          KEUNGGULAN PT BBE
+        </h1>
+        <img src="img/bbe5.jpg" class="bgcard" alt="" />
+        <div class="d-flex align-items-center big-card">
+          <div class="container mt-5">
+            <div class="row g-5 justify-content-sm-center">
+              <!-- Card 1 -->
+              <div class="col-lg-4 col-12 col-sm-6 mb-4">
+                <div
+                  class="card text-white rounded-5 cardme"
+                  style="background-color: #053b50"
+                >
+                  <img
+                    src="img/icon1.png"
+                    class="card-img-top"
+                    alt="Gambar Card 1"
+                  />
+                  <div class="card-body">
+                    <h1 class="card-title">Keselamatan dan Kesehatan</h1>
+                    <p class="card-text py-lg-4 py-sm-4 py-3">
+                      PT BBE mengutamakan keselamatan dan kesehatan sebagai
+                      nilai inti perusahaan. Kami berkomitmen untuk menciptakan
+                      lingkungan kerja yang aman dan sehat untuk semua karyawan
+                      kami.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-lg-4 col-12 col-sm-6 mb-4">
+                <div
+                  class="card text-white rounded-5 cardme"
+                  style="background-color: #053b50"
+                >
+                  <img
+                    src="img/icon2.png"
+                    class="card-img-top"
+                    alt="Gambar Card 2"
+                  />
+                  <div class="card-body">
+                    <h1 class="card-title">
+                      Membantu Komunitas dan Lingkungan
+                    </h1>
+                    <p class="card-text py-lg-4 py-sm-4 py-3">
+                      PT BBE aktif dalam tanggung jawab sosial perusahaan. Kami
+                      berinvestasi dalam proyek-proyek yang memberikan manfaat
+                      bagi komunitas setempat dan lingkungan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-lg-4 col-12 col-sm-6 mb-4">
+                <div
+                  class="card text-white rounded-5 cardme"
+                  style="background-color: #053b50"
+                >
+                  <img
+                    src="img/icon3.png"
+                    class="card-img-top"
+                    alt="Gambar Card 3"
+                  />
+                  <div class="card-body">
+                    <h1 class="card-title">
+                      Penelitian Geologis Berkualitas Tinggi
+                    </h1>
+                    <p class="card-text py-lg-4 py-sm-4 py-3">
+                      PT BBE memiliki tim penelitian geologis yang berdedikasi
+                      untuk memahami secara mendalam sumber daya batu bara yang
+                      kami kelola.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="team">
+        <div class="container" id="short-tim">
+          <h1 class="display-5 fw-bold pt-5" style="color: #176b87">
+            Tim Kami
+          </h1>
+          <p class="justify-text py-4 lh-lg">
+            Kami di PT Bukit Baiduri Energi adalah keluarga besar yang
+            berkomitmen untuk mencapai kinerja terbaik. Kami percaya bahwa kerja
+            sama, inovasi, dan keberlanjutan adalah kunci sukses kami. Seluruh
+            tim kami memiliki tekad untuk menjaga integritas, kualitas, dan
+            tanggung jawab sosial.
+          </p>
+          <div class="d-flex justify-content-center py-5">
+            <img src="img/so(4).png" alt="" id="image-static-team" />
+          </div>
+        </div>
+      </section>
+      <section id="linkedin" class="text-white align-items-center row">
+        <div class="col linkme justify-content-end gap-3">
+          <img src="img/Linkedin2.png" alt="" />
+          <h1>PT BUKIT BAIDURI ENERGI</h1>
+        </div>
+        <div class="col d-flex justify-content-center follow">
+          <button class="btn btn-primary rounded-1 px-5 pt-3 tombol">
+            <a
+              href="https://id.linkedin.com/company/pt-bukit-baiduri-energi"
+              target="_blank"
+              class="text-decoration-none text-white"
+              ><h5>follow PT BBE</h5></a
+            >
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="scroller" data-direction="left" data-speed="fast">
+          <div class="scroller__inner">
+            <img src="img/bbe1.jpeg" alt="" />
+            <img src="img/bbe2.jpg" alt="" />
+            <img src="img/bbe3.jpeg" alt="" />
+            <img src="img/bbe4.jpg" alt="" />
+            <img src="img/bbe5.jpg" alt="" />
+            <img src="img/bbe6.jpeg" alt="" />
+            <img src="img/bbe7.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section
+        class="linimasa1 d-flex align-items-center justify-content-lg-around"
+        style="
+          background-image: url(img/BG_BBE2.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="container row justify-content-lg-end">
+          <div class="col-lg-5 col-12 text-white">
+            <h1 class="fw-bold">KOLABORASI DAN TIM YANG KUAT</h1>
+            <p class="lh-lg">
+              Kami memahami pentingnya kolaborasi dan kerja tim yang kuat. Di PT
+              BBE, kamu akan bekerja bersama tim yang solid, berbagi
+              pengetahuan, dan menciptakan solusi inovatif untuk tantangan di
+              industri tambang batu bara.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="linimasa2 d-flex align-items-center"
+        style="
+          background-image: url(img/BG_BBE3.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="row text-center justify-content-center">
+          <div class="col-lg-5 col-11 text-white pt-5">
+            <h1 class="fw-bold">KOLABORASI DAN TIM YANG KUAT</h1>
+            <p class="lh-lg">
+              Kami memahami pentingnya kolaborasi dan kerja tim yang kuat. Di PT
+              BBE, kamu akan bekerja bersama tim yang solid, berbagi
+              pengetahuan, dan menciptakan solusi inovatif untuk tantangan di
+              industri tambang batu bara.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="">
+        <footer
+          class="text-center text-white"
+          style="background-color: #053b50; width: 100vw"
+        >
+          <!-- Grid container -->
+          <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4 d-flex justify-content-center">
+              <!-- Facebook -->
+              <a class="rounded-circle" href="#" role="button"
+                ><img
+                  src="img/facebook.png"
+                  class="rounded-circle tombol"
+                  id="icon-social"
+                  alt=""
+              /></a>
+
+              <!-- Twitter -->
+              <a class="rounded-circle mx-5" href="#" role="button"
+                ><img
+                  src="img/instagram.png"
+                  class="rounded-circle tombol"
+                  id="icon-social"
+                  alt=""
+              /></a>
+
+              <a class="rounded-circle" href="#" role="button"
+                ><img
+                  src="img/twitter.png"
+                  class="rounded-circle tombol"
+                  id="icon-social"
+                  alt=""
+              /></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+          >
+            © 2023 Copyright:
+            <a
+              class="text-white"
+              target="_blank"
+              href="https://id.linkedin.com/company/pt-bukit-baiduri-energi"
+              >PT BUKIT BAIDURI ENERGI</a
+            >
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      <!--
+      document.login.username.focus();
+      //-->
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      const navbar = document.getElementById("navme");
+
+      function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }
+
+      window.onscroll = () => {
+        this.scrollY > 20
+          ? navbar.classList.add("sticky")
+          : navbar.classList.remove("sticky");
+      };
+
+      let navme = document.getElementById("navbarSupportedContent");
+      document.querySelector("#mybars").onclick = () => {
+        navme.classList.toggle("appearme");
+      };
+    </script>
+    <script>
+      var copy = document.querySelector(".logos-slide").cloneNode(true);
+      document.querySelector(".logos").appendChild(copy);
+    </script>
+    <script>
+      const scrollers = document.querySelectorAll(".scroller");
+
+      // If a user hasn't opted in for recuded motion, then we add the animation
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
+      }
+
+      function addAnimation() {
+        scrollers.forEach((scroller) => {
+          // add data-animated="true" to every `.scroller` on the page
+          scroller.setAttribute("data-animated", true);
+
+          // Make an array from the elements within `.scroller-inner`
+          const scrollerInner = scroller.querySelector(".scroller__inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          // For each item in the array, clone it
+          // add aria-hidden to it
+          // add it into the `.scroller-inner`
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("aria-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

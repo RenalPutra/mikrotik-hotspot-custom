@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta http-equiv="refresh" content="2; url=$(link-redirect)" />-->
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <title>Internet hotspot - Redirect</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <script>
+      function startClock() {
+          $(if popup == 'true')
+          open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+      $(endif)
+      location.href = unescape('$(link-redirect-esc)');
+      }
+    </script>
+  </head>
+  <body class="background d-flex justify-content-center align-items-center">
+    <div class="d-flex align-items-center justify-content-center kotak">
+      <!-- Konten Anda -->
+
+      <div class="row align-items-center gx-5">
+        <div class="col-lg-6 col-12 col-sm-12 text-center text-light py-sm-5">
+          <h1 class="fw-bold eror">Welcome</h1>
+          <h1 class="fw-bold eror-2 gede">Let's Get You Connected!</h1>
+          <div class="p-div mx-5">
+            <p class="gede-p">
+              We apologize, but the page you were looking for cannot be found.
+              Please proceed to the login.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 col-sm-12">
+          <div
+            class="wrap-4 shadow-lg text-light rounded-5 py-4"
+            style="background-color: #7c81ad"
+          >
+            <h1 class="gede text-lg-center">You are status logged in</h1>
+            <table>
+              <tr>
+                <td>Username</td>
+                <td>$(username)</td>
+              </tr>
+              <tr>
+                <td>IP address</td>
+                <td>$(ip)</td>
+              </tr>
+              <tr>
+                <td>MAC address</td>
+                <td>$(mac)</td>
+              </tr>
+
+              <tr>
+                <td>Bytes up / down:</td>
+                <td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+              </tr>
+            </table>
+
+            <form
+              action="$(link-status)"
+              name="login"
+              onSubmit="return openLogin()"
+            >
+              <input type="submit" value="View status details" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!--
+  <body onLoad="startClock()">
+    <div class="ie-fixMinHeight">
+      <div class="main">
+        <div class="wrap">
+          <h1 class="text-light">You are logged in</h1>
+          <p class="info">
+            If nothing happens, click <a href="$(link-redirect)">here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+--></html>
